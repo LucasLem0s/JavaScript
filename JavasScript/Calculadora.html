@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Calculadora Básica 🧮 </title>
+</head>
+<body style="background-color:black;color: white; font-size: 20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; ">
+  <h1 style="color: white;" >Calculadora Básica 🧮</h1>
+
+  <script type="text/javascript">
+    
+    var numero1 = parseFloat(prompt("Por favor, digite o primeiro número:", "Número 1"));
+    var numero2 = parseFloat(prompt("Por favor, digite o segundo número:", "Número 2"));
+
+   
+    var operacao = prompt("Escolha a operação:\n1. Soma\n2. Subtração\n3. Multiplicação\n4. Divisão", "Soma, Subtração, Multiplicação ou Divisão");
+
+    var resultado;  // Armazena o resultado
+
+    // Verifica a operação e calcula o resultado
+    if (operacao === "Soma" || operacao === "1") {
+      resultado = numero1 + numero2;    
+    } else if (operacao === "Subtração" || operacao === "2") {
+      resultado = numero1 - numero2;
+    } else if (operacao === "Multiplicação" || operacao === "3") {
+      resultado = numero1 * numero2;
+    } else if (operacao === "Divisão" || operacao === "4") {
+      if (numero2 === 0) {
+        alert("Erro! Não é possível dividir por zero.");
+        resultado = "Indefinido";
+      } else {
+        resultado = numero1 / numero2;
+      }
+    } else {
+      alert("Operação inválida! Tente novamente.");
+      resultado = "Operação inválida";
+    }
+
+    // Exibição no site
+    alert("O resultado da " + operacao + " é: " + resultado);
+    document.write( "O resultado da operação " + operacao + " entre " + numero1 + " e " + numero2 + " é: " + resultado);
+  </script>
+
+<div style="display: flex; justify-content: center;" >
+    <div style="color: white;" >
+    <h2>Operações</h2>
+    <p>1 = Soma</p>
+    
+    <p>2 = Subtração</p>
+    
+    <p>3 = Multiplicação</p>
+    
+    <p>4 = Divisão</p></div></div>
+</body>
+</html>

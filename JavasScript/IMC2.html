@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo IMC ⛑︎</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript">
+        // Função cálculo do IMC
+        function calcImc() {
+            var peso = parseFloat(document.form_imc.peso.value);
+            var altura = parseFloat(document.form_imc.altura.value);
+            
+            // Verificação de dados válidos
+            if (isNaN(peso) || isNaN(altura) || altura === 0) {
+                alert("Por favor, insira valores válidos para peso e altura.");
+                return;
+            }
+            
+            // Cálculo IMC
+            var imc = peso / (altura * altura);
+            var imcTexto = "Seu IMC é " + imc.toFixed(2);
+
+            // Resultado
+            document.form_imc.imcCalculado.value = imcTexto;
+        }
+        function refreshForm() {
+            document.form_imc.reset();
+            document.form_imc.imcCalculado.value = ''; }    
+    </script>
+</head>
+<body style="background-color: burlywood;" >
+    
+    <h1 style="text-align: center;">Cálculo IMC ⛑︎  </h1>
+    <p style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">Digite seu peso e altura para calcular seu Índice de Massa Corporal (IMC)</p>
+    
+    <br>
+    
+    <form name="form_imc" style="text-align: center;">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" name="peso" id="peso" placeholder="Digite seu peso  Ex: 80" required style="margin: 10px; padding: 7px; background-color: rgb(224, 224, 224);">
+
+        <br>
+
+        <label for="altura">Altura (m):</label>
+        <input type="number" step="0.01" name="altura" id="altura" placeholder="Digite sua altura  Ex: 1.70" required style="margin: 10px; padding: 5px; background-color: rgb(224, 224, 224);  ">
+
+        <br><br><br>
+
+        <input type="button" onclick="calcImc()" value="Calcular IMC" style="padding: 10px 20px; cursor: pointer; background-color: #306d32; color: white; border: black; border-radius: 3px;">
+
+        <br><br>
+
+        <!-- Exibição do resultado -->
+        <output name="imcCalculado" id="imcCalculado" style="font-size: 18px; font-weight: bold; color: red;"></output>
+        <br><br>
+        <input type="button" onclick="refreshForm()" value="Refresh 🔄 " style="padding: 10px 20px; cursor: pointer; background-color: #ac2c23; color: white; border: blue  ; border-radius: 3px;">
+        <div style="text-align: end; margin: 50px; padding: -20px;"><img src="eat.gif" alt="gif" width="290" height="290"> </div>
+
+    </form>
+</body>
+    </form>
+</body>
+</html>

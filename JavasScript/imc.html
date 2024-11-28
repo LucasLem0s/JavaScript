@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <title>Cálculo IMC</title>
+  <!- dentro do head, vai o javascript -->
+  <script type="text/javascript">  
+    function calcImc() {
+        {
+          form_imc.imcCalculado.value = parseFloat(form_imc.peso.value) /
+		 (parseFloat(form_imc.altura.value) * parseFloat(form_imc.altura.value))
+		 }    
+      }
+  </script>
+  <!-- término do javascript -->
+  </head>
+  <body>
+	<p><mark style="background-color:salmon">Fazer a função javascript: Calcular IMC.</mark></p>
+	<p><mark style="background-color:#adff2f">Chamar cada a função através de seu botão.</mark></p>
+   <!-- aqui começa o formulário que recebeu uma identificação, um nome. -->
+ <form name="form_imc">
+    <input name="peso" id="peso" text="Peso" autofocus>
+    <input name="altura" id="altura">
+    <input type="button" onclick="calcImc()" value="Calcular IMC" /></br>
+	<input name="27%" type="radio" onclick="calcImc()" value="Alícota de 27,5%" />Testes</br>
+    <output name="imcCalculado" id="imcCalculado"></output>
+   </form>
+   <!-- término do formulário -->
+  </body>
+</html>
